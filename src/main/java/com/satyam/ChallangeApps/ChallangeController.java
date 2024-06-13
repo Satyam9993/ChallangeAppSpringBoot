@@ -16,12 +16,12 @@ public class ChallangeController {
         this.challangeService = challangeService;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<Challenge>> getAllChallanges(){
         return new ResponseEntity<>(challangeService.getAllChallanges(), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<String> AddChallange(@RequestBody Challenge challenge){
         return challangeService.AddChallange(challenge) == true ? new ResponseEntity<>("Successfully Added", HttpStatus.CREATED) : new ResponseEntity<>("Not Added", HttpStatus.BAD_GATEWAY);
     }

@@ -48,13 +48,7 @@ class ChallangeService {
 
 
     public boolean deleteChallenge(Long id){
-        int indx = -1;
-        for(Challenge ch : challanges){
-            if(ch.getId() == id){
-
-            }
-        }
-        return false;
+        return challanges.removeIf(ch -> ch.getId() == id);
     }
 
 }
