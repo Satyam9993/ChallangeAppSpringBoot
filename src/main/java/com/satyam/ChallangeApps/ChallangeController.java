@@ -36,6 +36,15 @@ public class ChallangeController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+//    @GetMapping("/{month}")
+//    public ResponseEntity<Challenge> getChallengeByMonth(@PathVariable String month){
+//        Challenge challenge = challangeService.getChallengeByMonth(month);
+//        if(challenge != null){
+//            return new ResponseEntity<>(challenge, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//    }
+
     @PutMapping("/{id}")
     public ResponseEntity<String> updateChallange(@PathVariable Long id,@RequestBody Challenge challenge){
         boolean anyChallange = challangeService.updateChallange(id, challenge);
